@@ -133,10 +133,10 @@ export default function Home() {
   </div>
   <div className="w-screen flex flex-col items-center justify-center mt-4">
     <div className="uppercase text-lg text-gray-700 font-bold">Protein Assessment Form</div>
-    <div className="bg-white rounded-sm p-4 w-10/12 mt-4 min-w-min">
+    <div className="bg-white rounded-sm p-4 w-10/12 mt-4 min-w-min shadow-sm">
     <form onSubmit={handleSubmit}>
       <div className="grid grid-cols-1 md:grid-cols-4 content-center gap-2">
-      <div className="bg-gray-100 p-4 rounded-md mt-2">            
+      <div className="bg-gray-100 p-4 rounded-md mt-2 ">            
         <input
           onChange={({target}) =>
             setUserInfo({ ...userInfo, name: target.value })
