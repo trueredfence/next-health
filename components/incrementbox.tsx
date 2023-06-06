@@ -13,7 +13,7 @@ interface IncrementBtn {
 export default function IncrementButton({name, value, increment, decrement, fitem}:IncrementBtn) {
 
     return (
-        <div className="text-center w-20 "> 
+        <div className="text-center mx-1 md:mx-0"> 
         <label className="w-full text-gray-700 text-sm font-semibold">{name}</label>
           <div className="flex flex-row h-10 w-full rounded-lg bg-transparent mt-1">
             <button type="button" disabled={value < 1} onClick={() => decrement(name)} name="bread" className=" bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">

@@ -126,182 +126,148 @@ export default function Home() {
     )   
   }
 
-  return (
-    <>
-    <div>
-        <Head>
-          <title>Protein Assesment Form</title>
-        </Head>
-    </div>
-    <div>      
-      <div className="flex flex-col justify-center items-center">
-      <form onSubmit={handleSubmit}>
-        <div className="form bg-white drop-shadow-lg min-w-min flex flex-col w-11/12 p-4 mt-16 pt-8">   
-          <div className="flex flex-col md:flex-row justify-around items-center">   
-            <div className="flex w-full p-4 ">
-              <div className=" w-full mx-2">
-                <div className="bg-gray-100 p-4 w-11/12 flex rounded-md">            
-                  <input
-                   onChange={({target}) =>
-                      setUserInfo({ ...userInfo, name: target.value })
-                    }
-                    type="text" 
-                    className="bg-gray-100 outline-none text-sm flex-1 " 
-                    name="name" 
-                    placeholder="Your Name" />
-                </div>
-              </div>
-              <div className=" w-full mx-2">
-                <div className="bg-gray-100 p-4 w-11/12 flex rounded-md">            
-                  <input
-                   onChange={({target}) =>
-                      setUserInfo({ ...userInfo, age: target.value })
-                    }
-                    type="number" 
-                    className="bg-gray-100 outline-none text-sm flex-1 " 
-                    name="age" 
-                    placeholder="Your age in years" />
-                </div>
-              </div>
-            </div>
-            <div className="flex w-full p-4 ">
-              <div className=" w-full mx-2 md:-ml-4">
-                <div className="bg-gray-100 p-4 w-11/12 flex rounded-md">            
-                  <input
-                  onChange={({target}) =>
-                    setUserInfo({ ...userInfo, weight: target.value })
-                  }
-                    type="number" 
-                    className="bg-gray-100 outline-none text-sm flex-1 " 
-                    name="weight" 
-                    placeholder="Your weight in kg" />
-                </div>
-              </div>
-              <div className=" w-full mx-2">
-                <div className="bg-gray-100 p-4 w-11/12 flex rounded-md">            
-                  <input
-                    onChange={({target}) =>
-                      setUserInfo({ ...userInfo, height: target.value })
-                    }
-                    type="number" 
-                    className="bg-gray-100 outline-none text-sm flex-1 " 
-                    name="height" 
-                    placeholder="Your height in cm" />
-                </div>
-              </div>
-            </div>
-          </div>   
-          <div className="flex flex-col md:flex-row justify-around items-center">   
-            <div className="flex w-full p-4 ">
-              <div className=" w-full mx-2">
-                <div className="bg-gray-100 p-4 w-11/12 flex rounded-md">            
-                  <select name="gender" value={userInfo.gender} className="w-full md:w-46 bg-gray-100 outline-none text-sm text-gray-400"                  
-                  onChange={({target}) =>
-                    setUserInfo({ ...userInfo, gender: target.value })
-                  }
-                  >
-                    <option label="Choose your gender"></option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Other</option>              
-                  </select>
-                </div>
-              </div>
-              <div className=" w-full mx-2">
-                <div className="bg-gray-100 p-4 w-11/12 flex rounded-md">            
-                <select name="bodystate" value={userInfo.bodystate} className="w-full md:w-46 bg-gray-100 outline-none text-sm text-gray-400"
-                  onChange={({target}) =>
-                    setUserInfo({ ...userInfo, bodystate: target.value })
-                  }
-                  >
-                    <option label="Choose your body state"></option>
-                    <option value="Adult">Adult</option>
-                    <option value="Children">Children</option>
-                    <option value="Pregnant">Pregnant</option>
-                    <option value="Lactating">Lactating</option>              
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div className="flex w-full p-4 ">
-              <div className=" w-full mx-2 md:-ml-4">
-                <div className="bg-gray-100 p-4 w-11/12 flex rounded-md">            
-                <select name="phyActivity" value={userInfo.phyActivity} className="w-full md:w-46 bg-gray-100 outline-none text-sm text-gray-400"
-                  onChange={({target}) =>
-                    setUserInfo({ ...userInfo, phyActivity: target.value })
-                  }
-                  >
-                    <option label="Choose your physical activity"></option>
-                    <option value="1">Sedentary-Little or No Exercise</option>
-                    <option value="2">Light 1-3 time/week</option>
-                    <option value="3">Moderate 4-5 time/week</option>
-                    <option value="4">Very Active 6-7 time/week</option>
-                    <option value="5">Intense – hard daily exercise/sports</option>            
-                  </select>
-                </div>
-              </div>
-              <div className=" w-full mx-2">
-              </div>
-            </div>
-          </div>  
+ return (
+  <>
+  <div>
+    <Head><title>Protein Assesment Form</title></Head>
+  </div>
+  <div className="w-screen flex flex-col items-center justify-center mt-4">
+    <div>Heading</div>
+    <div className="bg-white rounded-sm p-4 w-10/12 mt-4 min-w-min">
+    <form onSubmit={handleSubmit}>
+      <div className="grid grid-cols-1 md:grid-cols-4 content-center gap-2">
+      <div className="bg-gray-100 p-4 rounded-md mt-2">            
+        <input
+          onChange={({target}) =>
+            setUserInfo({ ...userInfo, name: target.value })
+          }
+          type="text" 
+          className="bg-gray-100 outline-none text-sm" 
+          name="name" 
+          placeholder="Your Name" />
+      </div>
 
-          <div className="flex flex-col md:flex-row justify-around items-center">   
-            <div className="flex w-full p-4 justify-around items-center ">
-              <IncrementButton name="bread" value={foodItemsValues.bread} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
-              <IncrementButton name="roti" value={foodItemsValues.roti} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
-              <IncrementButton name="oats" value={foodItemsValues.oats} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
-              <IncrementButton name="idly" value={foodItemsValues.idly} increment={increment} decrement={decrement} fitem={foodItemsValues}/>                
-            </div>
-            <div className="flex w-full p-4 justify-around items-center ">
-              <IncrementButton name="dosa" value={foodItemsValues.dosa} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
-              <IncrementButton name="milk" value={foodItemsValues.milk} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
-              <IncrementButton name="pratha" value={foodItemsValues.pratha} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
-              <IncrementButton name="puri" value={foodItemsValues.puri} increment={increment} decrement={decrement} fitem={foodItemsValues}/>                
-            </div>            
-          </div> 
-          <div className="flex flex-col md:flex-row justify-around items-center">   
-            <div className="flex w-full p-4 justify-around items-center ">
-              <IncrementButton name="corn" value={foodItemsValues.corn} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
-              <IncrementButton name="dal" value={foodItemsValues.dal} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
-              <IncrementButton name="sambar" value={foodItemsValues.sambar} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
-              <IncrementButton name="vegitable" value={foodItemsValues.vegitable} increment={increment} decrement={decrement} fitem={foodItemsValues}/>                
-            </div>
-            <div className="flex w-full p-4 justify-around items-center ">
-              <IncrementButton name="fish" value={foodItemsValues.fish} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
-              <IncrementButton name="dahi" value={foodItemsValues.dahi} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
-              <IncrementButton name="kichri" value={foodItemsValues.kichri} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
-              <IncrementButton name="chicken" value={foodItemsValues.chicken} increment={increment} decrement={decrement} fitem={foodItemsValues}/>                
-            </div>            
-          </div>      
-          <div className="flex flex-col md:flex-row justify-around items-center">   
-            <div className="flex w-full p-4 justify-around items-center ">
-              <IncrementButton name="egg" value={foodItemsValues.egg} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
-              <IncrementButton name="choley" value={foodItemsValues.choley} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
-              <IncrementButton name="tea" value={foodItemsValues.tea} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
-              <IncrementButton name="rice" value={foodItemsValues.rice} increment={increment} decrement={decrement} fitem={foodItemsValues}/>                
-            </div>
-            <div className="flex w-full p-4 justify-around items-center ">
-              <IncrementButton name="salad" value={foodItemsValues.salad} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
-              <IncrementButton name="NA" value={0} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
-              <IncrementButton name="NA" value={0} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
-              <IncrementButton name="NA" value={0} increment={increment} decrement={decrement} fitem={foodItemsValues}/>                
-            </div>            
-          </div>          
-          <div className="flex items-center justify-center mt-4">
-            <button type="submit" className={`flex items-center justify-center border-2 rounded-md w-64 px-2 py-2 font-semibold bg-cyan-800 text-cyan-200`}>
-              <div>Check Details</div>                        
-            </button>
-          </div>
-        </div>
-        </form>
-        <div className="w-11/12 p-4 mt-4 text-sm text-gray-600">
-          <div className="mg-b-2">Copyright © 2022. Desiteck. All Rights Reserved.</div>
-          <div>Check Your Protein.</div>
-          <div className='text-justify'>DISCLAIMER : Information provided on this website is of a general nature only and is included for the sole purpose of providing general information about protein intake as per ICMR. This information is not intended to be a subtitute for individualised professional medical advice, diagnosis or treatment and reliance should not be place on it. For presonalised medical or nutition advice, user should make an appointment with their doctor, dietitian or qulified health care professional.</div>        
-        </div>
+      <div className="bg-gray-100 p-4 rounded-md mt-2">            
+        <input
+          onChange={({target}) =>
+            setUserInfo({ ...userInfo, age: target.value })
+          }
+          type="number" 
+          className="bg-gray-100 outline-none text-sm " 
+          name="age" 
+          placeholder="Your age in years" />
+      </div>
 
+      <div className="bg-gray-100 p-4  rounded-md mt-2">            
+        <input
+        onChange={({target}) =>
+          setUserInfo({ ...userInfo, weight: target.value })
+        }
+          type="number" 
+          className="bg-gray-100 outline-none text-sm " 
+          name="weight" 
+          placeholder="Your weight in kg" />
+      </div>
+
+      <div className="bg-gray-100 p-4  rounded-md mt-2">            
+        <input
+          onChange={({target}) =>
+            setUserInfo({ ...userInfo, height: target.value })
+          }
+          type="number" 
+          className="bg-gray-100 outline-none text-sm  " 
+          name="height" 
+          placeholder="Your height in cm" />
+      </div>
+
+      </div> 
+      <div className="grid grid-cols-1 md:grid-cols-4 content-center gap-2">
+      <div className="bg-gray-100 p-4  rounded-md mt-2">            
+        <select name="gender" value={userInfo.gender} className="w-full md:w-46 bg-gray-100 outline-none text-sm text-gray-400"                  
+        onChange={({target}) =>
+          setUserInfo({ ...userInfo, gender: target.value })
+        }
+        >
+          <option label="Choose your gender"></option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>              
+        </select>
+      </div>
+
+      <div className="bg-gray-100 p-4  rounded-md mt-2">            
+        <select name="bodystate" value={userInfo.bodystate} className="w-full md:w-46 bg-gray-100 outline-none text-sm text-gray-400"
+          onChange={({target}) =>
+            setUserInfo({ ...userInfo, bodystate: target.value })
+          }
+          >
+          <option label="Choose your body state"></option>
+          <option value="Adult">Adult</option>
+          <option value="Children">Children</option>
+          <option value="Pregnant">Pregnant</option>
+          <option value="Lactating">Lactating</option>              
+        </select>
+      </div>
+
+      <div className="bg-gray-100 p-4  rounded-md mt-2">            
+        <select name="phyActivity" value={userInfo.phyActivity} className="w-full md:w-46 bg-gray-100 outline-none text-sm text-gray-400"
+          onChange={({target}) =>
+            setUserInfo({ ...userInfo, phyActivity: target.value })
+          }
+          >
+        <option label="Choose your physical activity"></option>
+        <option value="1">Sedentary-Little or No Exercise</option>
+        <option value="2">Light 1-3 time/week</option>
+        <option value="3">Moderate 4-5 time/week</option>
+        <option value="4">Very Active 6-7 time/week</option>
+        <option value="5">Intense – hard daily exercise/sports</option>            
+      </select>
       </div>
     </div>
-    </>
-  )
+
+    <div className="grid grid-cols-4 md:grid-cols-8 content-center gap-2">   
+        <IncrementButton name="bread" value={foodItemsValues.bread} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
+        <IncrementButton name="roti" value={foodItemsValues.roti} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
+        <IncrementButton name="oats" value={foodItemsValues.oats} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
+        <IncrementButton name="idly" value={foodItemsValues.idly} increment={increment} decrement={decrement} fitem={foodItemsValues}/>                
+        <IncrementButton name="dosa" value={foodItemsValues.dosa} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
+        <IncrementButton name="milk" value={foodItemsValues.milk} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
+        <IncrementButton name="pratha" value={foodItemsValues.pratha} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
+        <IncrementButton name="puri" value={foodItemsValues.puri} increment={increment} decrement={decrement} fitem={foodItemsValues}/>                
+    </div> 
+    <div className="grid grid-cols-4 md:grid-cols-8 content-center gap-2">   
+        <IncrementButton name="corn" value={foodItemsValues.corn} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
+        <IncrementButton name="dal" value={foodItemsValues.dal} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
+        <IncrementButton name="sambar" value={foodItemsValues.sambar} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
+        <IncrementButton name="vegitable" value={foodItemsValues.vegitable} increment={increment} decrement={decrement} fitem={foodItemsValues}/>                
+        <IncrementButton name="fish" value={foodItemsValues.fish} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
+        <IncrementButton name="dahi" value={foodItemsValues.dahi} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
+        <IncrementButton name="kichri" value={foodItemsValues.kichri} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
+        <IncrementButton name="chicken" value={foodItemsValues.chicken} increment={increment} decrement={decrement} fitem={foodItemsValues}/>                
+    </div>      
+    <div className="grid grid-cols-4 md:grid-cols-8 content-center gap-2">  
+        <IncrementButton name="egg" value={foodItemsValues.egg} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
+        <IncrementButton name="choley" value={foodItemsValues.choley} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
+        <IncrementButton name="tea" value={foodItemsValues.tea} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
+        <IncrementButton name="rice" value={foodItemsValues.rice} increment={increment} decrement={decrement} fitem={foodItemsValues}/>                
+        <IncrementButton name="salad" value={foodItemsValues.salad} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
+        <IncrementButton name="NA" value={0} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
+        <IncrementButton name="NA" value={0} increment={increment} decrement={decrement} fitem={foodItemsValues}/>
+        <IncrementButton name="NA" value={0} increment={increment} decrement={decrement} fitem={foodItemsValues}/>                
+    </div>          
+      <div className="flex items-center justify-center mt-4">
+        <button type="submit" className={`flex items-center justify-center border-2 rounded-md w-64 px-2 py-2 font-semibold bg-cyan-800 text-cyan-200`}>
+          <div>Check Details</div>                        
+        </button>
+      </div>
+      </form>
+      </div> 
+      <div className="w-10/12 p-4 mt-4 text-sm text-gray-600">
+        <div className="mg-b-2">Copyright © 2022. Desiteck. All Rights Reserved.</div>
+        <div>Check Your Protein.</div>
+        <div className='text-justify'>DISCLAIMER : Information provided on this website is of a general nature only and is included for the sole purpose of providing general information about protein intake as per ICMR. This information is not intended to be a subtitute for individualised professional medical advice, diagnosis or treatment and reliance should not be place on it. For presonalised medical or nutition advice, user should make an appointment with their doctor, dietitian or qulified health care professional.</div>        
+      </div>
+  </div>
+  </>
+ )
 }
