@@ -20,6 +20,7 @@ export interface FoodItems {
     tea:number
     salad:number
     rice:number
+    paneer:number
 }
 
 export interface UserInfo {
