@@ -270,7 +270,7 @@ export default function Home() {
       </form>
       </div> 
       <div className="w-10/12 p-4 mt-4 text-sm text-gray-600">
-        <div className="mg-b-2">Copyright © 2023. DevTechFusion. All Rights Reserved.</div>
+        <div className="mg-b-2">Copyright © 2025. trueredfence. All Rights Reserved.</div>
         <div>Check Your Protein.</div>
         <div className='text-justify'>DISCLAIMER : Information provided on this website is of a general nature only and is included for the sole purpose of providing general information about protein intake as per ICMR. This information is not intended to be a subtitute for individualised professional medical advice, diagnosis or treatment and reliance should not be place on it. For presonalised medical or nutition advice, user should make an appointment with their doctor, dietitian or qulified health care professional.</div>        
       </div>
